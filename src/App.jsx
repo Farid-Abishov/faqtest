@@ -7,7 +7,7 @@ import RootLayout from './pages/root/root'
 import UserPage from './pages/users/User'
 import QuestionCategoryPage from './pages/questionCategory/QuestionCategory'
 import UserCategoryPage from './pages/usersCategory/UserCategory'
-import QuizPage from './pages/Quiz/quiz'
+import QuizPage from './pages/Quiz/Quiz'
 import TagPage from './pages/Tags/Tags'
 const router = createBrowserRouter([
   {
