@@ -52,7 +52,7 @@ export default function UserManageTable() {
             <p className="p-3">Suallar</p>
             <hr />
             <div className="controls p-3 ">
-                <div className="search-filter">
+                <div className="search-filter w-full">
                     <input
                         type="search"
                         placeholder="Axtarış"

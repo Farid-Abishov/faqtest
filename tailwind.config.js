@@ -28,7 +28,8 @@ export default {
         'aside-w':'335px',
         'profile_input_btn':'315px',
         'addbtn':'179px',
-        'qstnmngInput':'500px'
+        'qstnmngInput':'460px',
+        'img':'275px'
       },
      
       height:{

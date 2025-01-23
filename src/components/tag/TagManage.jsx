@@ -90,6 +90,18 @@ export default function TagManageTable() {
                         <img src={Edit} alt="" onClick={openModal} />
                     </td>
                 </tr>
+                <tr>
+                    <td >Bizimlə irəliləyin: müasir həllər, sürətli nəticələr</td>
+                  
+                    <td className='flex gap-5 justify-end'>
+                        <label className="switch">
+                            <input type="checkbox" />
+                            <span className="slider"></span>
+                        </label>
+                        <img src={Bin} alt="" />
+                        <img src={Edit} alt="" onClick={openModal} />
+                    </td>
+                </tr>
 
                
 

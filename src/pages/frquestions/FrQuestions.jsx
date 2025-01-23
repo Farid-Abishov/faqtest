@@ -18,7 +18,7 @@ export default function FrQuestionsPage(){
     return  <div className='bg-body-bg'>
          <header className='flex  justify-between h-header-h max-w-header-w shadow-custom-shadow px-5 bg-white '>
          <div className="flex flex-row   justify-center items-center align-center my-4">
-                <h1 className='  md:text-lg lg:text-xl xl:text-3xl  font-semibold font-title text-header-black '>FAQ Support</h1>
+                <h1 className=' m-0  md:text-lg lg:text-xl xl:text-3xl  font-semibold font-title text-header-black '>FAQ Support</h1>
                 <img src={logo} alt="logo" className='h-full ' />
         </div>
         <div className="icon_box mt-5 flex justify-center items-center align-center gap-x-3 relative	">

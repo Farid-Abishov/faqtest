@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
   }
 
   // Redirect to login if not authenticated
-  return isAuthenticated ? children : <Navigate to="/login" replace />;
+  return isAuthenticated ? children : <Navigate to="/" replace />;
 };
 
 PrivateRoute.propTypes = {

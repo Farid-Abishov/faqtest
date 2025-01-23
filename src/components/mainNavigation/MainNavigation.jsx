@@ -3,8 +3,8 @@
     export default function MainNavigation(){
         return <>
         <aside className=" min-h-screen	 float-start  w-aside-w  p-2 border-2  border-r-gray-200 max-[765px]:hidden">
-            <div className="flex flex-row  align-center my-4">
-                    <h1 className=' text-xl  font-semibold font-title text-header-black'>FAQ Support</h1>
+            <div className="flex flex-row  align-center items-center my-4">
+                    <h1 className=' text-xl m-0  font-semibold font-title text-header-black'>FAQ Support</h1>
                     <img src={logo} alt="logo"  className="w-12 "/>
              </div>
           <ul className="flex flex-col gap-5 p-3" >

@@ -5,7 +5,11 @@ import PrivateRoute from "./utils/PrivateRouter";
 import LoginPage from "./pages/login/Login";
 import RootLayout from "./pages/root/root";
 import QuestionPage from "./pages/question/Question"
-
+import FrQuestionsPage from "./pages/frquestions/FrQuestions";
+import QuestionCategoryPage from "./pages/questionCategory/QuestionCategory";
+import UserCategoryPage from './pages/usersCategory/UserCategory'
+import QuizPage from './pages/Quiz/Quiz'
+import TagPage from './pages/Tags/Tags'
 import UserPage from "./pages/users/User";
 
 // const router = createBrowserRouter([
@@ -32,7 +36,15 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<LoginPage />}></Route>
+          <Route path="/" element={<LoginPage/>}></Route>
+          <Route
+              path="/frquestions"
+              element={
+                <PrivateRoute>
+                  <FrQuestionsPage />
+                </PrivateRoute>
+              }
+            ></Route>
           <Route element={<RootLayout />}>
             <Route
               path="/questions"
@@ -47,6 +59,39 @@ function App() {
               element={
                 <PrivateRoute>
                   <UserPage />
+                </PrivateRoute>
+              }
+            ></Route>
+           
+            <Route
+              path="/questionscategory"
+              element={
+                <PrivateRoute>
+                   <QuestionCategoryPage />
+                </PrivateRoute>
+              }
+            ></Route>
+            <Route
+              path="/userscategory"
+              element={
+                <PrivateRoute>
+                   <UserCategoryPage />
+                </PrivateRoute>
+              }
+            ></Route>
+            <Route
+              path="/quiz"
+              element={
+                <PrivateRoute>
+                   <QuizPage />
+                </PrivateRoute>
+              }
+            ></Route>
+            <Route
+              path="/tag"
+              element={
+                <PrivateRoute>
+                   <TagPage />
                 </PrivateRoute>
               }
             ></Route>

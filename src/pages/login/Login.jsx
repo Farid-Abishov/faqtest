@@ -17,6 +17,7 @@ export default function LoginPage() {
       // console.log('Login successful:', response);
       if (response.data.username === "admin") {
         navigate("/frquestions");
+        console.log()
       }
     } catch (err) {
       setError(err.message);
@@ -28,7 +29,7 @@ export default function LoginPage() {
   return (
     <>
       <div className="flex flex-row justify-center items-center my-4">
-        <h1 className="text-4xl font-semibold text-header-black">
+        <h1 className="m-0 text-4xl font-semibold text-header-black">
           FAQ Support
         </h1>
         <img src={logo} alt="logo" />

@@ -18,7 +18,7 @@ export default function QuestionManageTable() {
         <p className='p-3'>Suallar</p>
         <hr />
         <div className="controls p-3 ">
-            <div className="search-filter">
+            <div className="search-filter w-full">
                 <input
                     type="search"
                     placeholder="Axtarış"
@@ -114,6 +114,20 @@ export default function QuestionManageTable() {
                         <img src={Edit} alt="" onClick={openModal} />
                     </td>
                 </tr>
+                <tr>
+                    <td>Bizimlə irəliləyin: müasir həllər, sürətli nəticələr</td>
+                    <td>Marketing</td>
+                    <td>Kredit</td>
+                    <td className='flex gap-5 justify-end'>
+                        <label className="switch">
+                            <input type="checkbox" />
+                            <span className="slider"></span>
+                        </label>
+                        <img src={Bin} alt="" />
+                        <img src={Edit} alt="" onClick={openModal} />
+                    </td>
+                </tr>
+              
 
                
 
