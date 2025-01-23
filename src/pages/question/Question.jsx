@@ -6,7 +6,7 @@ export default function QuestionPage(){
  ">
         <Header addBtnText='Yeni sual' userName='Ayxan' />
         <div className="p-5 "> 
-           <div className='text-justify bg-white  rounded-2xl h-container-h  shadow-custom-shadow overflow-scroll' >
+           <div className='text-justify bg-white  rounded-2xl h-container-h  shadow-custom-shadow overflow-y-scroll' >
               <QuestionManageTable/>
            </div> 
         </div>

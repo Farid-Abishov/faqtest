@@ -20,13 +20,23 @@ and (max-width: 765px){
 }
   
   .modal-content {
+    height: 90%;
+    overflow-y: scroll;
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 20px;
     width: 659px;
     max-width: 100%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
   }
+  .modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
   
   .close-button {
     position: absolute;
