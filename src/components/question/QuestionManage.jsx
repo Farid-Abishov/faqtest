@@ -25,13 +25,13 @@ export default function QuestionManageTable() {
                     className="search-input w-qstnmngInput " />
 
                 <select name="" id="" className='border-2 rounded-lg text-gray-400 select outline-none'>
-                    <option value="" selected>Status</option>
+                    <option value="" >Status</option>
                     <option value="">Ok</option>
                     <option value="">No</option>
                 </select>
 
                 <select name="" id="" className='border-2 rounded-lg text-gray-400 select outline-none'>
-                    <option value="" selected>Kateqoriya</option>
+                    <option value="" >Kateqoriya</option>
                     <option value="" >Marketing</option>
                     <option value=""></option>
                 </select>

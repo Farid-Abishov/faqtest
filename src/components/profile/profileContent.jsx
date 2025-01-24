@@ -27,7 +27,7 @@ export default function ProfileContent(){
             </li>
             <hr />
             <li className="font-entry-title">
-                <Link to='/login'>Çıxış</Link>
+                <Link to='/' >Çıxış</Link>
             </li>
             <hr />
         </ul>

@@ -4,39 +4,30 @@ import Edit from '../../assets/icons/Edit.svg'
 import CancelIcon from '../../assets/icons/cancel.png'
 import Refresh from '../../assets/icons/Refresh.svg'
 import ProfileModal from '../profile/profileModal'
+import {getUserList} from '../../Api/user/index'
+import {changeUserStatus} from '../../Api/user/index'
 import { useState, useEffect } from 'react'
-// import api from '../../Api/apiconfig'
-import { userLoad } from '../../Api/user';
 
 export default function UserManageTable() {
-    const [data, setData] = useState(null);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-
-    useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true);
-            setError('');
-            try {
-                const data = await userLoad(); // Call the API
-                setData(data);  // Set data to state
-            } catch (err) {
-                setError(err.message); // Display error message
-            } finally {
-                setLoading(false);
-            }
-        };
+    const [userList, setUserList] = useState([]);
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
     
-        fetchData(); // Execute the async function
-    
-        // Optional cleanup function for unmounting
-        return () => {
-            setLoading(false);
-            setError('');
-        };
-    }, [])
-
+    const UserList = async () => {
+        setLoading(true);
+        setError("");
+        try {
+          const response = await getUserList();
+          setUserList(response.data.data)
+        } catch (err) {
+          setError(err.message);
+        } finally {
+          setLoading(false);
+        }
+      };
+      useEffect(() => {
+        UserList()
+      }, [])
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = () => {
@@ -47,6 +38,20 @@ export default function UserManageTable() {
         setIsModalOpen(false);
     };
 
+    const updateStatus=async (id)=>{
+        setUserList(userList.map(user=>{
+            if(user.id===id){
+                return {
+                    ...user,
+                    is_active:user.is_active===1 ? 0 : 1
+                }
+            }
+            return user;
+        }))
+        changeUserStatus(id)
+    }
+    
+    
     return (
         <div className="faq-management">
             <p className="p-3">Suallar</p>
@@ -60,13 +65,13 @@ export default function UserManageTable() {
                     />
     
                     <select name="" id="" className="border-2 rounded-lg text-gray-400 select outline-none">
-                        <option value="" selected>Status</option>
+                        <option value=""  >Status</option>
                         <option value="">Ok</option>
                         <option value="">No</option>
                     </select>
     
                     <select name="" id="" className="border-2 rounded-lg text-gray-400 select outline-none">
-                        <option value="" selected>Kateqoriya</option>
+                        <option value="" >Kateqoriya</option>
                         <option value="">Marketing</option>
                         <option value=""></option>
                     </select>
@@ -79,7 +84,7 @@ export default function UserManageTable() {
                 <p className="text-center text-gray-500">Yüklənir...</p> // Loading message
             ) : error ? (
                 <p className="text-center text-red-500">{error}</p> // Display error message
-            ) : data && data.length > 0 ? ( // Render table only if data exists and isn't empty
+            ) : userList && userList.length > 0 ? ( // Render table only if data exists and isn't empty
                 <table className="faq-table">
                     <thead>
                         <tr>
@@ -91,16 +96,16 @@ export default function UserManageTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((item) => (
+                        {userList.map((item) => (
                             <tr key={item.id}>
                                 <td>{item.id}</td>
-                                <td>{item.name}</td>
-                                <td>{item.username}</td>
-                                <td>{item.email}</td>
-                                <td>{item.company.name}</td>
+                                <td>{item.last_login_date}</td>
+                                <td>{item.score}</td>
+                                <td>{item.department.parent.title}</td>
+                                <td>{item.department.title}</td>
                                 <td className="flex gap-5 justify-end">
                                     <label className="switch">
-                                        <input type="checkbox" />
+                                        <input type="checkbox"  checked={item.is_active===1} onChange={()=>updateStatus(item.id)}  />
                                         <span className="slider"></span>
                                     </label>
                                     <img src={Bin} alt="" />
