@@ -98,7 +98,7 @@ export default function UserManageTable() {
                     <tbody>
                         {userList.map((item) => (
                             <tr key={item.id}>
-                                <td>{item.id}</td>
+                                <td>{item.name}</td>
                                 <td>{item.last_login_date}</td>
                                 <td>{item.score}</td>
                                 <td>{item.department.parent.title}</td>

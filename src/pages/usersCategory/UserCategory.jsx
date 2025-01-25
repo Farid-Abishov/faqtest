@@ -3,7 +3,7 @@ import CategoryItem from '../../components/categoryItem.jsx/categoryItem'
 import { getDepartmentList } from '../../Api/department/department';
 import { useEffect,useState } from 'react';
 export default function UserCategoryPage(){
-      const [departments, setDepartments] = useState([]);
+       const [departments, setDepartments] = useState([]);
        const [error, setError] = useState("");
        const [loading, setLoading] = useState(false);
 
